@@ -1,0 +1,61 @@
+<ng-container>
+    <div>
+        <p></p>
+
+        <form *ngIf="homePageForm" [formGroup]="homePageForm" (ngSubmit)="onSubmit()">
+            <label>Category:</label>
+            <select id="ddlCategory" formControlName="ddlCategory" required>
+                <option disabled selected [value]=""></option>
+                <option *ngFor="let categoryDetail of categoryValues" [value]="categoryDetail.Value" >
+                    {{ categoryDetail.Value }}
+                </option>
+            </select>
+            <div class="error"
+                *ngIf="homePageForm.get('ddlCategory').hasError('required') && homePageForm.get('ddlCategory').touched">
+                Category is required
+            </div>
+            
+            
+            <p></p>
+
+            <label>Auth:</label>
+            <select id="ddlAuth" formControlName="ddlAuth">
+                <option selected [value]=""></option>
+                <option *ngFor="let authDetail of authValues" [value]="authDetail.Value">
+                    {{ authDetail.Value }}
+                </option>
+            </select>            
+
+            <p></p>
+
+            <label>HTTPS:</label>
+            <select id="ddlHttps" formControlName="ddlHttps">
+                <option selected [value]=""></option>
+                <option *ngFor="let httpsDetail of httpsValues" [value]="httpsDetail.Value" >
+                    {{ httpsDetail.Value }}
+                </option>
+            </select>            
+
+            <p></p>
+
+            <label>CORS:</label>
+            <select id="ddlCors" formControlName="ddlCors">
+                <option selected [value]=""></option>
+                <option *ngFor="let corsDetail of corsValues" [value]="corsDetail.Value" >
+                    {{ corsDetail.Value }}
+                </option>
+            </select>
+            
+
+            <p></p>
+
+            <button type="submit" [disabled]="!homePageForm.valid">Submit</button>
+        </form>
+        <p></p>
+        <div>
+            <app-home-page-grid *ngIf="submitClicked && homePageForm.valid" 
+                [showData]="gridData" [fieldNames]="headerNames">
+            </app-home-page-grid>
+        </div>
+    </div>
+</ng-container>

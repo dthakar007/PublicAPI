@@ -1,0 +1,26 @@
+
+.headerContent {
+    color: firebrick;
+    height: 100px;
+    background-color: wheat;
+    text-align: center;
+    display: table;
+    width:100%;    
+}
+.headerContent h1 {
+    display: table-cell;
+    vertical-align: middle;    
+}
+
+.sideContent {
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    float: left;
+    background-color: cornsilk;
+}
+.mainContent {
+    float: left;
+    margin-left: 100px;
+    position: relative;
+}

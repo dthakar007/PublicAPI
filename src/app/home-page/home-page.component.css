@@ -1,0 +1,27 @@
+label {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+}
+
+select {
+    border-radius: 4px;
+    padding: 5px;
+}
+
+select option { 
+    margin: 15px;
+}
+
+button {
+    padding: 10px;
+    background-color: cornsilk;
+    font-size: 20px;
+    margin-left: 105px;
+}
+
+  
+  button:disabled, button[disabled] {
+    background-color: #cccccc;
+  }
+

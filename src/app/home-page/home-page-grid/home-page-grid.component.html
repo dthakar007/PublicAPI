@@ -1,0 +1,22 @@
+<div *ngIf="showData?.length>0; else displayMessage">
+    <table>
+        <thead align="center">
+            <tr>
+                <th *ngFor="let col of fieldNames">
+                    {{col=='Cors'?(col|uppercase):col}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of showData">
+                <td *ngFor="let col of fieldNames">
+                    {{col=='Auth'&&data[col]==''?'No':data[col]}}
+                </td>
+            </tr>        
+        </tbody>
+    </table>
+</div>  
+<ng-template #displayMessage>
+    <p class="errMessage">No records Exist</p>
+</ng-template>
+    

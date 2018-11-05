@@ -1,0 +1,22 @@
+table, th, td 
+{
+    margin: 10px 0;
+    border: solid 1px #333;
+    padding: 2px 4px;
+    font: 15px Verdana;
+}
+th {
+    font-weight:bold;
+    background-color: cornsilk;
+}
+td {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+.errMessage {
+    color: red;
+    height: 40px;
+    width: 50%;
+    text-align: center;
+    border-style: double;
+}
